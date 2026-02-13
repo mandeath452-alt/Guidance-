@@ -1,0 +1,529 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  color:white;
+  min-height:100vh;
+  overflow-x:hidden;
+
+  /* luxury night gradient */
+  background:
+  radial-gradient(circle at 10% 10%, #1a2a3a, transparent 40%),
+  radial-gradient(circle at 90% 20%, #2c5364, transparent 40%),
+  linear-gradient(160deg,#0f2027,#203a43,#2c5364);
+}
+
+/* ================= HEADER ================= */
+header{
+  text-align:center;
+  padding:25px 15px;
+}
+
+header h1{
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+header p{
+  margin-top:6px;
+  font-size:13px;
+  opacity:0.85;
+}
+
+/* ================= MAIN ================= */
+main{
+  padding:20px;
+}
+
+/* ================= CARDS ================= */
+section{
+  margin:22px 0;
+  padding:20px;
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(14px);
+
+  box-shadow:
+  0 8px 25px rgba(0,0,0,0.35),
+  inset 0 0 0 1px rgba(255,255,255,0.05);
+
+  transition:transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+section:hover{
+  transform:translateY(-3px);
+  box-shadow:
+  0 12px 35px rgba(0,0,0,0.45),
+  inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+h2{
+  font-size:18px;
+  font-weight:600;
+}
+
+/* ================= BUTTON ================= */
+button{
+  margin-top:15px;
+  padding:10px 16px;
+  border:none;
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+
+  background:linear-gradient(135deg,#ffd700,#ffb300);
+  color:black;
+
+  transition:0.2s ease;
+}
+
+button:hover{
+  transform:scale(1.05);
+  box-shadow:0 5px 15px rgba(255,215,0,0.5);
+}
+
+/* ================= POPUP ================= */
+.popup{
+  position:fixed;
+  inset:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+
+  /* sexy blur */
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(8px);
+
+  z-index:1000;
+}
+
+/* popup visible state (JS lagayega) */
+.popup.show{
+  display:flex;
+}
+
+/* ================= POPUP CARD ================= */
+.popupCard{
+  width:100%;
+  max-width:420px;
+  max-height:85vh;
+  overflow-y:auto;
+
+  border-radius:20px;
+  padding:20px;
+
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.03)
+  );
+
+  box-shadow:
+  0 15px 40px rgba(0,0,0,0.6),
+  inset 0 0 0 1px rgba(255,255,255,0.05);
+
+  animation:popupEnter 0.35s ease;
+}
+
+/* HEADER */
+.popupHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.popupHeader h2{
+  font-size:18px;
+}
+
+/* CLOSE BUTTON */
+.close{
+  background:#ff4d4d;
+  color:white;
+  padding:6px 10px;
+  border-radius:8px;
+  font-size:14px;
+}
+
+.close:hover{
+  transform:scale(1.1);
+  box-shadow:0 4px 12px rgba(255,0,0,0.4);
+}
+
+/* CONTENT */
+.popupContent{
+  font-size:14px;
+  line-height:1.6;
+  opacity:0.95;
+}
+
+/* SCROLLBAR */
+.popupCard::-webkit-scrollbar{
+  width:5px;
+}
+.popupCard::-webkit-scrollbar-thumb{
+  background:gold;
+  border-radius:10px;
+}
+
+/* ENTRY ANIMATION */
+@keyframes popupEnter{
+  from{
+    transform:translateY(30px) scale(0.95);
+    opacity:0;
+  }
+  to{
+    transform:translateY(0) scale(1);
+    opacity:1;
+  }
+}
+
+/* MOBILE */
+@media(max-width:500px){
+  h2{
+    font-size:16px;
+  }
+}
+/* ===================================================
+   ULTRA PREMIUM EXPERIENCE PACK
+   safe to paste at END
+=================================================== */
+
+
+/* Smooth scroll */
+html{
+  scroll-behavior: smooth;
+}
+
+
+/* ===== BUTTON MAGIC ===== */
+button{
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* lift */
+button:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+/* press */
+button:active{
+  transform: scale(0.96);
+}
+
+/* glow */
+button::after{
+  content:"";
+  position:absolute;
+  width:120%;
+  height:120%;
+  top:-10%;
+  left:-10%;
+  background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 60%);
+  opacity:0;
+  transition:opacity 0.3s;
+}
+
+button:hover::after{
+  opacity:1;
+}
+
+
+/* ===== POPUP CINEMA EFFECT ===== */
+#popup{
+  opacity:0;
+  transform:scale(0.92);
+  transition:all 0.35s ease;
+}
+
+#popup.show{
+  opacity:1;
+  transform:scale(1);
+}
+
+
+/* ===== TEXT READING BOOST ===== */
+#popupContent{
+  line-height:1.8;
+  font-size:15px;
+}
+
+
+/* ===== GLASS CARD LOOK ===== */
+.card, section{
+  backdrop-filter: blur(8px);
+}
+
+
+/* ===== HEADINGS HERO STYLE ===== */
+h1,h2,h3{
+  letter-spacing:1px;
+  font-weight:700;
+}
+
+
+/* ===== SCROLLBAR PREMIUM ===== */
+::-webkit-scrollbar{
+  width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(to bottom,#ffd54f,#ffb300);
+  border-radius:10px;
+}
+
+
+/* ===== SOFT FADE WHEN PAGE LOAD ===== */
+body{
+  animation: fadeInBody 0.4s ease;
+}
+
+@keyframes fadeInBody{
+  from{opacity:0; transform:translateY(8px);}
+  to{opacity:1; transform:translateY(0);}
+}
+/* =====================================================
+   MEGA ULTRA PREMIUM RAMADAN UI PACK
+   Safe – paste at END
+===================================================== */
+
+
+/* ===== FONT & BASE ===== */
+body{
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ===== ANIMATED GRADIENT BACKGROUND ===== */
+body{
+  background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+
+/* ===== HEADINGS HERO LOOK ===== */
+h1,h2,h3{
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255,215,0,0.3);
+}
+
+
+/* ===== BUTTON PREMIUM ===== */
+button{
+  background: linear-gradient(45deg,#ffd54f,#ffb300);
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* lift */
+button:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* press */
+button:active{
+  transform: scale(0.96);
+}
+
+/* shine */
+button::after{
+  content:"";
+  position:absolute;
+  top:-50%;
+  left:-50%;
+  width:200%;
+  height:200%;
+  background: linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+  transform: rotate(25deg);
+  transition:0.5s;
+  opacity:0;
+}
+
+button:hover::after{
+  opacity:1;
+}
+
+
+/* ===== SECTION / CARD GLASS ===== */
+section, .card{
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  transition: 0.3s ease;
+}
+
+section:hover{
+  transform: scale(1.01);
+}
+
+
+/* ===== POPUP CINEMATIC ENTRY ===== */
+#popup{
+  opacity: 0;
+  transform: scale(0.92);
+  transition: all 0.35s ease;
+  backdrop-filter: blur(15px);
+}
+
+#popup.show{
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* ===== POPUP CONTENT READING ===== */
+#popupContent{
+  line-height: 1.9;
+  font-size: 15px;
+  scroll-behavior: smooth;
+}
+
+
+/* ===== TEXT APPEAR ANIMATION ===== */
+#popupContent p{
+  animation: fadeText 0.25s ease;
+}
+
+@keyframes fadeText{
+  from{opacity:0; transform:translateY(5px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+
+/* ===== SCROLLBAR LUXURY ===== */
+::-webkit-scrollbar{
+  width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(to bottom,#ffd54f,#ffb300);
+  border-radius:10px;
+}
+
+
+/* ===== PAGE FADE LOAD ===== */
+body{
+  animation: bodyFade 0.4s ease;
+}
+
+@keyframes bodyFade{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+
+/* ===== SOFT GLOW AROUND POPUP ===== */
+#popup{
+  box-shadow: 0 0 40px rgba(255,215,0,0.15);
+}
+
+
+/* ===== DISABLE UGLY SELECT ===== */
+*{
+  user-select: none;
+}
+
+
+/* ===== SMALL MOBILE FRIENDLY TOUCH ===== */
+button{
+  min-height: 42px;
+}
+#nasheedToggle{
+  position: fixed;
+  top: 40px;
+  right: 10px;
+  z-index: 999;
+  background: linear-gradient(45deg,#ffd54f,#ffb300);
+  border:none;
+  padding:2px 4px;
+  border-radius:10px;
+  font-weight:bold;
+}
+/* ===================================================
+   ULTIMATE RAMADAN NIGHT EXPERIENCE
+=================================================== */
+
+
+/* ===== BASE MOVING SKY ===== */
+body{
+  background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000);
+  background-size: 400% 400%;
+  animation: skyMove 18s ease infinite;
+}
+
+@keyframes skyMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+
+/* ===== GOLDEN NOOR GLOW ===== */
+body::before{
+  content:"";
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: radial-gradient(circle at top right, rgba(255,215,0,0.15), transparent 40%);
+  pointer-events:none;
+  z-index:0;
+}
+
+
+/* ===== MOSQUE SHADOW DEPTH ===== */
+body::after{
+  content:"";
+  position: fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:220px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  pointer-events:none;
+  z-index:0;
+}
+#nasheedToggle{
+  position: fixed !important;
+  top: 40px !important;
+  right: 10px !important;
+  z-index: 2147483647 !important;
+}
+
+body, html{
+  transform: none !important;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramadan Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<button id="nasheedToggle">🔊 Sound On</button>
+
+<audio id="bgNasheed" loop>
+  <source src="nasheed.mp3" type="audio/mpeg">
+</audio>
+<header>
+  <h1>🌙 Ramadan Kareem</h1>
+  <p>created by your beloved ilhan ❤️</p>
+</header>
+
+<main>
+
+<!-- ============ TITLES ============ -->
+
+<section>
+  <h2>Morning Dua</h2>
+  <button onclick="openDetail('Morning Dua')">Next ➜</button>
+</section>
+
+<section>
+  <h2>Iftar Dua</h2>
+  <button onclick="openDetail('Iftar Dua')">Next ➜</button>
+</section>
+
+<section>
+  <h2>Sehri Reminder</h2>
+  <button onclick="openDetail('Sehri Reminder')">Next ➜</button>
+</section>
+
+<section>
+  <h2>Sehri Time</h2>
+  <button onclick="openDetail('Sehri Time')">Next ➜</button>
+</section>
+
+<section>
+  <h2>Iftar Time</h2>
+  <button onclick="openDetail('Iftar Time')">Next ➜</button>
+</section>
+
+<section>
+  <h2>Tasbeeh Counter</h2>
+  <button onclick="openDetail('Tasbeeh Counter')">Next ➜</button>
+</section>
+
+<section>
+  <h2>Good Deed</h2>
+  <button onclick="openDetail('Good Deed')">Next ➜</button>
+</section>
+
+<section>
+  <h2>Laylat al-Qadr</h2>
+  <button onclick="openDetail('Laylat al-Qadr')">Next ➜</button>
+</section>
+
+<section>
+  <h2>Zakat</h2>
+  <button onclick="openDetail('Zakat')">Next ➜</button>
+</section>
+
+<section>
+  <h2>Nasheed</h2>
+  <button onclick="openDetail('Nasheed')">Next ➜</button>
+</section>
+<!-- BIG BUTTON -->
+<section>
+  <button style="width:100%;font-size:18px;padding:15px"
+  onclick="document.getElementById('extraRamadan').scrollIntoView({behavior:'smooth'})">
+    Know About Ramadan More 🌙
+  </button>
+</section>
+
+
+<!-- EXTRA INFORMATION AREA -->
+<section id="extraRamadan">
+
+  <h2>Deep Knowledge About Ramadan 📖</h2>
+
+  <button onclick="openDetail('Ramadan Start')">How Ramadan Started</button>
+
+  <button onclick="openDetail('Why We Fast')">Why Muslims Fast</button>
+
+  <button onclick="openDetail('What Breaks Fast')">What Breaks the Fast</button>
+
+  <button onclick="openDetail('Who Is Exempt')">Who Is Exempt from Fasting</button>
+
+  <button onclick="openDetail('Rewards of Fasting')">Rewards of Fasting</button>
+
+  <button onclick="openDetail('Common Mistakes')">Common Mistakes</button>
+
+  <button onclick="openDetail('Women in Ramadan')">Women in Ramadan</button>
+
+  <button onclick="openDetail('Ramadan for Kids')">Ramadan for Kids</button>
+
+</section>
+</main>
+
+
+<!-- ============ POPUP DETAIL PAGE ============ -->
+<div class="popup" id="popup">
+
+  <div class="popupCard">
+
+    <div class="popupHeader">
+      <h2 id="popupTitle"></h2>
+      <button class="close" onclick="closeDetail()">✕</button>
+    </div>
+
+    <div class="popupContent" id="popupContent">
+      <!-- Yaha JS se content aayega -->
+    </div>
+
+  </div>
+
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
